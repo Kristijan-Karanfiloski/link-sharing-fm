@@ -1,0 +1,47 @@
+@import url("https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;700&display=swap");
+
+:root {
+  --font-family-default: "Instrument Sans";
+  --fw-bold: 700;
+  --fw-regular: 400;
+
+  --fs-heading-M: 2rem;
+  --fs-heading-S: 1rem;
+  --fs-body-M: 1rem;
+  --fs-body-S: 0.75rem;
+
+  --clr--darkGray: #333333;
+  --clr--grey: #737373;
+  --clr--lightPurple-hoverColor: #efebff;
+  --clr--purple: #633cff;
+  --clr--borderColor: #d9d9d9;
+  --clr--lightGray: #fafafa;
+  --clr--white: #ffffff;
+  --clr--red: #ff3939;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  font: inherit;
+}
+
+img,
+svg {
+  display: block;
+  max-width: 100%;
+  /*height: auto;*/
+}
+
+body {
+  font-family: var(--font-family-default);
+  background: var(--clr--lightGray);
+  /*min-height: 100vh;*/
+  /*background: #10141E;*/
+  /*font-family: "Roboto", sans-serif;*/
+}

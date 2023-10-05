@@ -1,0 +1,176 @@
+.loginPage__wrapper {
+  min-height: 100vh;
+  display: grid;
+  padding: 2rem;
+  //gap: 4rem;
+  //border: 1px solid red;
+  //flex-direction: column;
+  //justify-content: center;
+  //align-items: center;
+  background: green;
+
+  .loginPage__wrapper__logo {
+    height: 40px;
+    margin-left: 0.25rem;
+  }
+
+  .loginPage__wrapper__container {
+    //display: grid;
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    //border: 1px solid red;
+    background: var(--clr--white);
+    //min-width: 250px;
+    //padding: 2rem;
+
+    .loginPage__wrapper__container__heading {
+      //border: 1px solid green;
+      margin-bottom: 1rem;
+
+      .loginPage__wrapper__container__heading__h2 {
+        font-size: 1.75rem;
+        font-weight: var(--fw-bold);
+      }
+
+      .loginPage__wrapper__container__heading__p {
+        margin-top: 1rem;
+        font-size: var(--fs-heading-S);
+        color: var(--clr--grey);
+        width: 90%;
+      }
+    }
+
+    .loginPage__wrapper__container__text {
+      //border: 1px solid blue;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      margin-top: 2rem;
+
+      .loginPage__wrapper__container__text__p {
+        color: var(--clr--grey);
+      }
+
+      .loginPage__wrapper__container__text__link {
+        text-decoration: none;
+        color: var(--clr--purple);
+      }
+    }
+  }
+}
+
+///// FOR  TABLET////////////////////////////////
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  /* Tablet-only styles here */
+
+  .loginPage__wrapper {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    gap: 4rem;
+    //border: 5px solid red;
+    background: #ff3939;
+
+    .loginPage__wrapper__logo {
+      height: auto;
+      margin-left: 0;
+    }
+
+    .loginPage__wrapper__container {
+      display: grid;
+      //border: 1px solid red;
+      background: var(--clr--white);
+      min-width: 400px;
+      padding: 2.5rem;
+
+      .loginPage__wrapper__container__heading {
+        .loginPage__wrapper__container__heading__p {
+          width: 100%;
+        }
+      }
+
+      .loginPage__wrapper__container__text {
+        //border: 1px solid blue;
+        display: flex;
+        flex-direction: row;
+        //flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin-top: 2rem;
+      }
+    }
+  }
+}
+
+/////FOR DESKTOP////////////////////////////////
+
+@media (min-width: 1024px) {
+  .loginPage__wrapper {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    //padding: 2rem;
+    gap: 4rem;
+    //border: 5px solid red;
+    //flex-direction: column;
+    //justify-content: center;
+    //align-items: center;
+
+    .loginPage__wrapper__logo {
+      height: auto;
+      margin-left: 0;
+    }
+
+    .loginPage__wrapper__container {
+      display: grid;
+      //border: 1px solid red;
+      background: var(--clr--white);
+      min-width: 400px;
+      padding: 2.5rem;
+
+      .loginPage__wrapper__container__heading {
+        //border: 1px solid green;
+        //margin-bottom: 1rem;
+        //
+        //.loginPage__wrapper__container__heading__h2 {
+        //  font-size: 1.75rem;
+        //  font-weight: var(--fw-bold);
+        //}
+
+        .loginPage__wrapper__container__heading__p {
+          //margin-top: 1rem;
+          //font-size: var(--fs-heading-S);
+          //color: var(--clr--grey);
+          width: 100%;
+        }
+      }
+
+      .loginPage__wrapper__container__text {
+        //border: 1px solid blue;
+        display: flex;
+        flex-direction: row;
+        //flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin-top: 2rem;
+
+        //.loginPage__wrapper__container__text__p {
+        //  color: var(--clr--grey);
+        //}
+        //
+        //.loginPage__wrapper__container__text__link {
+        //  text-decoration: none;
+        //  color: var(--clr--purple);
+        //}
+      }
+    }
+  }
+}
