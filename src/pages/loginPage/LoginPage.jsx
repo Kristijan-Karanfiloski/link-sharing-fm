@@ -2,6 +2,7 @@ import "./LoginPage.scss";
 import Logo from "/images/logo-devlinks-large.svg";
 import AuthForm from "../../components/authForm/AuthForm.jsx";
 import { Link, useNavigate } from "react-router-dom";
+import GoogleIcon from "/images/google-icon.svg";
 
 const LoginPage = () => {
   const navigate = useNavigate();
@@ -27,7 +28,7 @@ const LoginPage = () => {
     },
   ];
 
-  const handleSubmit = (formData) => {
+  const handleSubmit = () => {
     // console.log("From the LOGIN PAGE Logging in with :", formData);
     navigate("/mainPage");
   };
@@ -48,6 +49,19 @@ const LoginPage = () => {
           name="Login"
           formType="Login"
         />
+        <div className="loginPage__wrapper__googleButton__container">
+          <button className="loginPage__wrapper__googleButton__container__btn">
+            Login with Google
+          </button>
+          <img
+            className="loginPage__wrapper__googleButton__container__icon"
+            src={GoogleIcon}
+            alt="google icon"
+          />
+          {/*<span className="loginPage__wrapper__googleButton__container__icon">*/}
+          {/*  */}
+          {/*</span>*/}
+        </div>
         <div className="loginPage__wrapper__container__text">
           <p className="loginPage__wrapper__container__text__p">
             Don't have an account?

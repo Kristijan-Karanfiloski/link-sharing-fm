@@ -52,7 +52,7 @@ const AuthForm = ({
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    const errors = validateData();
+    const errors = validateData(name);
     console.log(errors);
     if (Object.keys(errors).length) {
       setErrors(errors);
@@ -78,9 +78,13 @@ const AuthForm = ({
           <div className="authForm__container__inputs gridFlow" key={i}>
             <label
               className={
-                formType === "Create new account" || !errors[field.name]
+                formType === "Login"
+                  ? !errors[field.name]
+                    ? "authForm__container__inputs__label"
+                    : "authForm__container__inputs__label__notValid"
+                  : formType === "Create new account"
                   ? "authForm__container__inputs__label"
-                  : "authForm__container__inputs__label__notValid"
+                  : ""
               }
             >
               {field.label}

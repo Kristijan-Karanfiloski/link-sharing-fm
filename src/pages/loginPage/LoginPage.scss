@@ -58,6 +58,26 @@
         color: var(--clr--purple);
       }
     }
+
+    .loginPage__wrapper__googleButton__container {
+      border: 1px solid red;
+      .loginPage__wrapper__googleButton__container__btn {
+        position: relative;
+        width: 100%;
+        margin-top: 1rem;
+        padding: 0.75rem;
+        border-radius: 7px;
+        border: none;
+        cursor: pointer;
+
+        .loginPage__wrapper__googleButton__container__icon {
+          border: 1px solid blue;
+          position: absolute;
+          top: 10%;
+          right: 50%;
+        }
+      }
+    }
   }
 }
 
@@ -86,7 +106,7 @@
       display: grid;
       //border: 1px solid red;
       background: var(--clr--white);
-      min-width: 400px;
+      min-width: 550px;
       padding: 2.5rem;
 
       .loginPage__wrapper__container__heading {
@@ -133,7 +153,7 @@
       display: grid;
       //border: 1px solid red;
       background: var(--clr--white);
-      min-width: 400px;
+      min-width: 550px;
       padding: 2.5rem;
 
       .loginPage__wrapper__container__heading {
