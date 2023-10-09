@@ -5,7 +5,7 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import LoginPage from "../loginPage/LoginPage.jsx";
 import { useEffect, useState } from "react";
 
-const MainPage = () => {
+const HomePage = () => {
   const auth = getAuth();
   const navigate = useNavigate();
   // const [user] = useAuthState(auth);
@@ -51,4 +51,4 @@ const MainPage = () => {
   );
 };
 
-export default MainPage;
+export default HomePage;

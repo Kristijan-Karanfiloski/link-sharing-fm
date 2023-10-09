@@ -24,13 +24,13 @@ const LoginPage = () => {
   useEffect(() => {
     if (user) {
       // console.log(user);
-      navigate("/mainPage");
+      navigate("/homePage");
     }
   }, [user]);
 
-  if (loading) {
-    return <Loader />;
-  }
+  // if (loading) {
+  //   return <Loader />;
+  // }
 
   const fields = [
     {
@@ -75,7 +75,7 @@ const LoginPage = () => {
         console.log(error);
       });
 
-    // navigate("/mainPage");
+    // navigate("/homePage");
   };
 
   return (

@@ -1,6 +1,7 @@
 .createAccount__wrapper {
   min-height: 100vh;
-  display: grid;
+  //display: flex;
+  //flex-direction: column;
   //display: flex;
   //flex-direction: column;
   //justify-content: start;
@@ -19,6 +20,7 @@
   
   .createAccount__wrapper__container {
 	//display: grid;
+	margin-top: 2.5rem;
 	display: flex;
 	flex-direction: column;
 	//border: 1px solid red;
@@ -50,7 +52,7 @@
 	  flex-direction: column;
 	  align-items: center;
 	  justify-content: center;
-	  margin-top: 2rem;
+	  margin-top: 1rem;
 	  
 	  .createAccount__wrapper__container__text__p {
 		color: var(--clr--grey);

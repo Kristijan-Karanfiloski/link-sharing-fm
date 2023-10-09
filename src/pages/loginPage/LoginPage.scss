@@ -16,7 +16,7 @@
     flex-direction: column;
     background: var(--clr--white);
     padding: 2rem;
-    margin-top: 2rem;
+    margin-top: 2.5rem;
 
     // WHEN I NEST THE CLASS THE & becomes .login-page_container--red
     //&--red {
@@ -34,6 +34,7 @@
   &__title {
     font-size: 1.5rem;
     margin-bottom: 1rem;
+    font-weight: var(--fw-bold);
   }
 
   &__footer {
@@ -46,7 +47,7 @@
   }
 
   &__text {
-    color: var(--clr--grey);
+    color: var(--clr--lightGray);
   }
 
   &__footer-link {
@@ -159,6 +160,13 @@
   &__icon {
     position: absolute;
     top: 33%;
-    left: 25%;
+    left: 18%;
+  }
+  
+  @media (min-width: 1024px) {
+    &__icon {
+      top: 33%;
+      left: 25%;
+    }
   }
 }
