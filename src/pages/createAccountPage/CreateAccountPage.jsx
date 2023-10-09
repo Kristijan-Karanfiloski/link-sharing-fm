@@ -2,10 +2,14 @@ import AuthForm from "../../components/authForm/AuthForm.jsx";
 import Logo from "/images/logo-devlinks-large.svg";
 import { Link, useNavigate } from "react-router-dom";
 import "./CreateAccountPage.scss";
-import { createUserWithEmailAndPassword } from "firebase/auth";
+import { createUserWithEmailAndPassword, getAuth } from "firebase/auth";
 import { auth, registerUserWithEmailAndPassword } from "../../firebase.js";
+import { useAuthState } from "react-firebase-hooks/auth";
 
 const CreateAccountPage = () => {
+  const auth = getAuth();
+
+  const [email] = useAuthState(auth);
   const navigate = useNavigate();
 
   const fields = [
@@ -58,10 +62,10 @@ const CreateAccountPage = () => {
     //     console.log(error);
     //   });
     console.log("From the Create Account Page Logging in with :", formData);
-    if (formData) {
-      alert("Account created");
-      navigate("/");
-    }
+    // if (email) {
+    //   // navigate("/");
+    // }
+    alert("Account created");
   };
 
   return (

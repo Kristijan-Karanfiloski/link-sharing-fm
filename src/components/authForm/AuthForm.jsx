@@ -24,7 +24,17 @@ const AuthForm = ({
       ...formData,
       [e.target.name]: e.target.value,
     });
-    console.log(formData);
+    // console.log(formData);
+  };
+
+  const validateEmail = (email) => {
+    const signUpEmailRegex = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i;
+
+    if (!signUpEmailRegex.test(email)) {
+      console.log("Invalid email format");
+    } else {
+      console.log("Successfully");
+    }
   };
 
   const validateData = (name) => {
@@ -32,6 +42,7 @@ const AuthForm = ({
     // // Check if the email field is empty
     if (!email) {
       // console.log(invalid.invalidUserName);
+      validateEmail(email);
       newErrors.email = "Email can't be empty";
     }
 

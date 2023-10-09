@@ -13,6 +13,7 @@ import {
 // import { useEffect } from "react";
 // import { signInWithEmailAndPassword } from "firebase/auth";
 import { useEffect } from "react";
+import Loader from "../../components/loader/Loader.jsx";
 
 const LoginPage = () => {
   const navigate = useNavigate();
@@ -21,14 +22,15 @@ const LoginPage = () => {
   // console.log(user);
 
   useEffect(() => {
-    if (loading) {
-      console.log("Loading...");
-    }
     if (user) {
-      console.log(user);
+      // console.log(user);
       navigate("/mainPage");
     }
   }, [user]);
+
+  if (loading) {
+    return <Loader />;
+  }
 
   const fields = [
     {
@@ -60,6 +62,10 @@ const LoginPage = () => {
     //   .catch((error) => {
     //     console.log(error);
     //   });
+
+    if (!user) {
+      console.log(error);
+    }
 
     logInWithEmailAndPassword(formData.email, formData.password)
       .then((userCredentials) => {
