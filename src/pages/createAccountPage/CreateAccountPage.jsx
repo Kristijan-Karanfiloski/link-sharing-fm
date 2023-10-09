@@ -2,25 +2,28 @@ import AuthForm from "../../components/authForm/AuthForm.jsx";
 import Logo from "/images/logo-devlinks-large.svg";
 import { Link, useNavigate } from "react-router-dom";
 import "./CreateAccountPage.scss";
+import { createUserWithEmailAndPassword } from "firebase/auth";
+import { auth, registerUserWithEmailAndPassword } from "../../firebase.js";
 
 const CreateAccountPage = () => {
   const navigate = useNavigate();
 
   const fields = [
     {
-      label: "Email address",
+      label: "Full Name",
       type: "text",
-      name: "username",
-      placeholder: "e.g.alex@email.com",
+      name: "fullName",
+      // placeholder: "e.g.alex@email.com",
+      placeholder: "Full Name",
       emailError: "Can't be empty'",
       // icon: <EmailIcon />,
       icon: "/images/icon-email.svg",
     },
     {
-      label: "Create Password",
-      type: "password",
-      name: "createPassword",
-      placeholder: "At least .8 characters",
+      label: "E-mail Address",
+      type: "text",
+      name: "email",
+      placeholder: "e.g.alex@email.com",
       icon: "/images/icon-password.svg",
     },
     {
@@ -35,9 +38,30 @@ const CreateAccountPage = () => {
   ];
 
   const handleSubmitCreateAccount = (formData) => {
-    navigate("/");
+    registerUserWithEmailAndPassword(
+      formData.fullName,
+      formData.email,
+      formData.password
+    )
+      .then((userCredentials) => {
+        console.log(userCredentials);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+
+    // createUserWithEmailAndPassword(auth, formData.email, formData.password)
+    //   .then((userCredentials) => {
+    //     console.log(userCredentials);
+    //   })
+    //   .catch((error) => {
+    //     console.log(error);
+    //   });
     console.log("From the Create Account Page Logging in with :", formData);
-    alert("Account created");
+    if (formData) {
+      alert("Account created");
+      navigate("/");
+    }
   };
 
   return (

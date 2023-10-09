@@ -16,19 +16,23 @@ import {
   where,
   addDoc,
 } from "firebase/firestore";
+import { useNavigate } from "react-router-dom";
 
+// Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyCH5POKwewMUQ1DgksG-miifEw4cy2tfFY",
-  authDomain: "link-sharign-app.firebaseapp.com",
-  databaseURL: "https://link-sharign-app-default-rtdb.firebaseio.com",
-  projectId: "link-sharign-app",
-  storageBucket: "link-sharign-app.appspot.com",
-  messagingSenderId: "204856552603",
-  appId: "1:204856552603:web:26211388cfdde79c8b6a3e",
-  measurementId: "G-K2FCKBPSYQ",
+  apiKey: "AIzaSyDxtFgf88YFSJA6Q_7ZSzsxDcrU37XYZnI",
+  authDomain: "link-sharing-app-63cff.firebaseapp.com",
+  projectId: "link-sharing-app-63cff",
+  storageBucket: "link-sharing-app-63cff.appspot.com",
+  messagingSenderId: "347502270146",
+  appId: "1:347502270146:web:b9610b3ebaf8a51c2f8d5b",
 };
 
+// Initialize Firebase
 const app = initializeApp(firebaseConfig);
+
+//Initialize Firebase Authentication and get a reference to the sevice
+
 const auth = getAuth(app);
 const db = getFirestore(app);
 
@@ -57,9 +61,9 @@ const signInWithGoogle = async () => {
 const logInWithEmailAndPassword = async (email, password) => {
   try {
     await signInWithEmailAndPassword(auth, email, password);
-  } catch (error) {
-    console.log(error);
-    alert(error.message);
+  } catch (err) {
+    console.error(err);
+    alert(err.message);
   }
 };
 
@@ -97,7 +101,13 @@ const sendPasswordReset = async (email) => {
 // And finally, the logout function:
 
 const logout = () => {
-  signOut(auth);
+  signOut(auth)
+    .then(() => {
+      console.log("Sign Out successful");
+    })
+    .catch((err) => {
+      console.log(err);
+    });
 };
 
 export {

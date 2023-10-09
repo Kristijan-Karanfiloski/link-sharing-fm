@@ -12,9 +12,9 @@ const AuthForm = ({
   const [formData, setFormData] = useState({});
   const [errors, setErrors] = useState({});
 
-  const { username, password, createPassword } = formData;
+  const { fullName, password, email } = formData;
 
-  console.log(name);
+  // console.log(name);
 
   // console.log("Form DATA FROM AUTH FROM ", formData);
   // console.log("Form DATA FROM AUTH FROM ", invalid);
@@ -24,22 +24,23 @@ const AuthForm = ({
       ...formData,
       [e.target.name]: e.target.value,
     });
+    console.log(formData);
   };
 
   const validateData = (name) => {
     let newErrors = {};
     // // Check if the email field is empty
-    if (!username) {
+    if (!email) {
       // console.log(invalid.invalidUserName);
-      newErrors.username = "Username can't be empty";
+      newErrors.email = "Email can't be empty";
     }
 
     if (!password) {
       newErrors.password = "Password can't be empty";
     }
 
-    if (name === "Create new account" && !createPassword) {
-      newErrors.createPassword = "Please check again";
+    if (name === "Create new account" && !fullName) {
+      newErrors.fullName = "Enter your full name";
     } else {
       console.log("not working");
     }
@@ -62,6 +63,8 @@ const AuthForm = ({
 
     if (onSubmitLogin) {
       onSubmitLogin(formData);
+
+      // signInWithEmailAndPassword(email, password);
     }
 
     if (onCreateAccount) {
