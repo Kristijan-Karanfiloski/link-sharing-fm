@@ -1,22 +1,35 @@
 import { Outlet } from "react-router";
 import { getAuth, signOut, onAuthStateChanged } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
-import { useAuthState } from "react-firebase-hooks/auth";
 import LoginPage from "../loginPage/LoginPage.jsx";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { setAuth } from "../../store/authUserSlice.jsx";
+import Loader from "../../components/loader/Loader.jsx";
 
 const HomePage = () => {
   const auth = getAuth();
   const navigate = useNavigate();
   // const [user] = useAuthState(auth);
-  const [authUser, setAuthUser] = useState(null);
+  // const [authUser, setAuthUser] = useState(null);
+  const dispatch = useDispatch();
+  const authUser = useSelector((state) => state.authUserSlice.value);
 
   useEffect(() => {
     const listen = onAuthStateChanged(auth, (user) => {
       if (user) {
-        setAuthUser(user);
+        // Extract the serializable data from the Firebase user object
+        const serializableUser = {
+          uid: user.uid,
+          email: user.email,
+        };
+
+        // setAuthUser(user);
+        // console.log("USER :", user);
+        dispatch(setAuth(serializableUser));
       } else {
-        setAuthUser(null);
+        // setAuthUser(null);
+        dispatch(setAuth(null));
       }
       return () => {
         listen();
@@ -39,13 +52,13 @@ const HomePage = () => {
     <>
       {authUser ? (
         <>
-          <h1>Main page</h1>
           <p>{`Signed In ${authUser.email}`} </p>
           <Outlet />
           <button onClick={onClickHandleLogout}>Logout</button>
         </>
       ) : (
-        <LoginPage />
+        // <LoginPage />
+        <Loader />
       )}
     </>
   );

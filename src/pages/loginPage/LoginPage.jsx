@@ -54,7 +54,7 @@ const LoginPage = () => {
   ];
 
   const handleSubmit = (formData) => {
-    console.log("From the LOGIN PAGE Logging in with :", formData);
+    // console.log("From the LOGIN PAGE Logging in with :", formData);
     // signInWithEmailAndPassword(auth, formData.email, formData.password)
     //   .then((userCredentials) => {
     //     console.log(userCredentials);
@@ -63,9 +63,9 @@ const LoginPage = () => {
     //     console.log(error);
     //   });
 
-    if (!user) {
-      console.log(error);
-    }
+    // if (!user) {
+    //   console.log(error);
+    // }
 
     logInWithEmailAndPassword(formData.email, formData.password)
       .then((userCredentials) => {
