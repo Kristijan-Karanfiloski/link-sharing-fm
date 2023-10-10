@@ -1,0 +1,37 @@
+.navigation {
+  background: var(--clr--white);
+  padding: 1rem 0;
+  display: flex;
+  justify-content: space-around;
+
+  &__middle__container {
+    display: flex;
+    gap: 1rem;
+  }
+
+  &__links {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    justify-content: space-around;
+    color: var(--clr--purple);
+    cursor: pointer;
+    padding: 0.5rem 1.25rem;
+    border: 1px solid transparent;
+    border-radius: 10px;
+    background: var(--clr--lightPurple-hoverColor);
+    
+    img{
+      //background: var(--clr--purple);
+      color: var(--clr--purple);
+    }
+    
+  }
+
+  &__preview {
+    padding: 0.5rem 1.25rem;
+    border: 2px solid var(--clr--purple);
+    border-radius: 10px;
+    background: transparent;
+  }
+}

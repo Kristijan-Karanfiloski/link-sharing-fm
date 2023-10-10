@@ -6,6 +6,7 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { setAuth } from "../../store/authUserSlice.jsx";
 import Loader from "../../components/loader/Loader.jsx";
+import Header from "../../components/header/Header.jsx";
 
 const HomePage = () => {
   const auth = getAuth();
@@ -48,10 +49,13 @@ const HomePage = () => {
       });
   };
 
+  //TODO : I NEED TO MAKE A PROTECTED ROUTE SO IF THE USER IS NOT AUTHENTICATED
+
   return (
     <>
       {authUser ? (
         <>
+          <Header />
           <p>{`Signed In ${authUser.email}`} </p>
           <Outlet />
           <button onClick={onClickHandleLogout}>Logout</button>

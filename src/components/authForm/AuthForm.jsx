@@ -53,7 +53,7 @@ const AuthForm = ({
     if (name === "Create new account" && !fullName) {
       newErrors.fullName = "Enter your full name";
     } else {
-      console.log("not working");
+      // console.log("not working");
     }
 
     //
@@ -65,7 +65,7 @@ const AuthForm = ({
     e.preventDefault();
 
     const errors = validateData(name);
-    console.log(errors);
+    // console.log(errors);
     if (Object.keys(errors).length) {
       setErrors(errors);
       //there are errors do not continue saving

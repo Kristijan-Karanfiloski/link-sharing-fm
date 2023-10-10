@@ -2,7 +2,7 @@ import "./LoginPage.scss";
 import Logo from "/images/logo-devlinks-large.svg";
 import AuthForm from "../../components/authForm/AuthForm.jsx";
 import { Link, useNavigate } from "react-router-dom";
-import GoogleIcon from "/images/google-icon.svg";
+// import GoogleIcon from "/images/google-icon.svg";
 import { useAuthState } from "react-firebase-hooks/auth";
 import {
   auth,
@@ -14,6 +14,8 @@ import {
 // import { signInWithEmailAndPassword } from "firebase/auth";
 import { useEffect } from "react";
 import Loader from "../../components/loader/Loader.jsx";
+
+//TODO:NEED TO DOWNLOAD A GOOGLE SVG
 
 const LoginPage = () => {
   const navigate = useNavigate();
@@ -100,7 +102,7 @@ const LoginPage = () => {
           </button>
           <img
             className="google-button__icon"
-            src={GoogleIcon}
+            // src={GoogleIcon}
             alt="google icon"
           />
         </div>
