@@ -14,18 +14,16 @@
     align-items: center;
     gap: 0.5rem;
     justify-content: space-around;
-    color: var(--clr--purple);
     cursor: pointer;
     padding: 0.5rem 1.25rem;
     border: 1px solid transparent;
+    background: transparent;
     border-radius: 10px;
-    background: var(--clr--lightPurple-hoverColor);
-    
-    img{
-      //background: var(--clr--purple);
+
+    &--active {
       color: var(--clr--purple);
+      background: var(--clr--lightPurple-hoverColor);
     }
-    
   }
 
   &__preview {
@@ -33,5 +31,6 @@
     border: 2px solid var(--clr--purple);
     border-radius: 10px;
     background: transparent;
+    cursor: pointer;
   }
 }

@@ -1,20 +1,20 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  activeLink: null,
+  activeLink: "Links",
 };
 
 const navigationLinksSlice = createSlice({
   name: "navigationLinks",
   initialState,
   reducers: {
-    setActiveIcon: (state, action) => {
+    setActiveLink: (state, action) => {
       // state.activeIcon = !state.activeIcon;
-      state.activeIcon = action.payload;
+      state.activeLink = action.payload;
     },
   },
 });
 
-export const { setActiveIcon } = navigationLinksSlice.actions;
+export const { setActiveLink } = navigationLinksSlice.actions;
 
 export default navigationLinksSlice.reducer;
