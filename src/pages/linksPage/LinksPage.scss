@@ -1,0 +1,88 @@
+.links-page {
+  padding: 0.5rem;
+  min-height: 100vh;
+  display: grid;
+  background: var(--clr--lightPurple-hoverColor);
+
+  &__right__section {
+    background: white;
+    border-radius: 10px;
+    padding: 2.5rem;
+    //display: grid;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  &__illustration {
+    justify-content: center;
+    //margin-top: 1rem;
+    border-radius: 10px;
+    background: var(--clr--lightGray);
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    gap: 0.5rem;
+    padding: 2.75rem;
+    margin-top: 1rem;
+  }
+
+  &__title {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    font-weight: var(--fw-bold);
+  }
+
+  &__description {
+    font-size: 1.13rem;
+    line-height: 1.27rem;
+    color: var(--clr--grey);
+  }
+
+  &__bottom__divider {
+    border-bottom: 2px solid var(--clr--borderColor);
+    margin-top: 1rem;
+  }
+
+  .button-container {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  &__button__add-new-link {
+    background: white;
+    color: #633cff;
+    border: 1px solid #633cff;
+  }
+
+  &__button__add-new-link:active {
+    background: var(--clr--lightPurple-hoverColor);
+  }
+  &__button__save {
+    width: 100%;
+  }
+}
+
+@media (min-width: 1024px) {
+  .links-page {
+    display: flex;
+    gap: 1rem;
+
+    &__left__section {
+      display: flex;
+      justify-content: center;
+      flex: 1;
+      padding: 3.5rem;
+      background: white;
+      border-radius: 10px;
+    }
+
+    &__right__section {
+      flex: 1;
+    }
+
+    &__button__save {
+      width: 15%;
+    }
+  }
+}

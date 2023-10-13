@@ -53,11 +53,11 @@ const HomePage = () => {
       {authUser ? (
         <>
           <Header />
-          <p>{`Signed In ${authUser.email}`} </p>
-          <main>
+          {/*<p>{`Signed In ${authUser.email}`} </p>*/}
+          <main style={{ border: "1px solid red" }}>
             <Outlet />
           </main>
-          <button onClick={onClickHandleLogout}>Logout</button>
+          {/*<button onClick={onClickHandleLogout}>Logout</button>*/}
         </>
       ) : (
         // <LoginPage />

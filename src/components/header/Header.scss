@@ -25,10 +25,15 @@
       background: var(--clr--lightPurple-hoverColor);
     }
   }
+  &__links:hover{
+    color: var(--clr--purple)
+  }
+  
 
   &__preview {
     padding: 0.5rem 1.25rem;
     border: 2px solid var(--clr--purple);
+    color: #633cff;
     border-radius: 10px;
     background: transparent;
     cursor: pointer;
