@@ -1,0 +1,75 @@
+.profile__details-page {
+  //padding: 0.5rem;
+  min-height: 100vh;
+  display: grid;
+  background: var(--clr--lightPurple-hoverColor);
+  
+  &__right__section {
+	background: white;
+	border-radius: 10px;
+	padding: 2.5rem;
+	//display: grid;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+  }
+  
+  &__illustration {
+	//justify-content: center;
+	//margin-top: 1rem;
+	display: grid;
+	border-radius: 10px;
+	background: var(--clr--lightGray);
+	//display: flex;
+	//flex-direction: column;
+	//text-align: center;
+	//gap: 0.5rem;
+	padding: 2.75rem;
+	margin-top: 1rem;
+  }
+  
+  &__image-container{
+	display: flex;
+	flex-direction: column;
+	justify-content:center;
+	background: var(--clr--lightPurple-hoverColor);
+	padding: 5rem;
+	border-radius: 10px;
+	margin: 1rem 1.5rem 1rem 0;
+  }
+  
+  &__title {
+	font-size: 1.5rem;
+	margin-bottom: 0.5rem;
+	font-weight: var(--fw-bold);
+  }
+  
+  &__description {
+	font-size: 1.13rem;
+	line-height: 1.27rem;
+	color: var(--clr--grey);
+  }
+  
+  &__bottom__divider {
+	border-bottom: 2px solid var(--clr--borderColor);
+	margin-top: 1rem;
+  }
+  
+  .button-container {
+	display: flex;
+	justify-content: flex-end;
+  }
+  
+  &__button__add-new-link {
+	background: white;
+	color: #633cff;
+	border: 1px solid #633cff;
+  }
+  
+  &__button__add-new-link:active {
+	background: var(--clr--lightPurple-hoverColor);
+  }
+  &__button__save {
+	width: 100%;
+  }
+}

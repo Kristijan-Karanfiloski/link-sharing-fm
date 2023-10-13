@@ -6,12 +6,15 @@ import { useDispatch, useSelector } from "react-redux";
 import { setAuth } from "../../store/authUserSlice.jsx";
 import Loader from "../../components/loader/Loader.jsx";
 import Header from "../../components/header/Header.jsx";
+import { useMediaQuery } from "@uidotdev/usehooks";
+import "./HomePage.scss";
 
 const HomePage = () => {
   const auth = getAuth();
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const authUser = useSelector((state) => state.authUserSlice.value);
+  const isDesktop = useMediaQuery("(min-width: 1024px)");
 
   useEffect(() => {
     const listen = onAuthStateChanged(auth, (user) => {
@@ -54,8 +57,17 @@ const HomePage = () => {
         <>
           <Header />
           {/*<p>{`Signed In ${authUser.email}`} </p>*/}
-          <main style={{ border: "1px solid red" }}>
-            <Outlet />
+          <main className="home-page" style={{ border: "1px solid red" }}>
+            {isDesktop ? (
+              <section className="home-page__left__section">
+                <img src="/images/illustration-phone-mockup.svg" alt="icon" />
+              </section>
+            ) : (
+              ""
+            )}
+            <section className="home-page__right__section">
+              <Outlet />
+            </section>
           </main>
           {/*<button onClick={onClickHandleLogout}>Logout</button>*/}
         </>

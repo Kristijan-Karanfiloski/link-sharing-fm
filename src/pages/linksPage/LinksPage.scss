@@ -1,5 +1,5 @@
 .links-page {
-  padding: 0.5rem;
+  //padding: 0.5rem;
   min-height: 100vh;
   display: grid;
   background: var(--clr--lightPurple-hoverColor);
@@ -62,27 +62,27 @@
     width: 100%;
   }
 }
-
-@media (min-width: 1024px) {
-  .links-page {
-    display: flex;
-    gap: 1rem;
-
-    &__left__section {
-      display: flex;
-      justify-content: center;
-      flex: 1;
-      padding: 3.5rem;
-      background: white;
-      border-radius: 10px;
-    }
-
-    &__right__section {
-      flex: 1;
-    }
-
-    &__button__save {
-      width: 15%;
-    }
-  }
-}
+//
+//@media (min-width: 1024px) {
+//  .links-page {
+//    display: flex;
+//    gap: 1rem;
+//
+//    &__left__section {
+//      display: flex;
+//      justify-content: center;
+//      flex: 1;
+//      padding: 3.5rem;
+//      background: white;
+//      border-radius: 10px;
+//    }
+//
+//    &__right__section {
+//      flex: 1;
+//    }
+//
+//    &__button__save {
+//      width: 15%;
+//    }
+//  }
+//}
